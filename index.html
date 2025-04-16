@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koirala Gems</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Brush Script MT', cursive; /* Cursive font */
+      background-color: pink; /* pink background */
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    nav {
+      background-color: #ffcc00; /* pink */
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .content {
+      margin: 20px;
+    }
+    .product {
+      display: inline-block;
+      width: 250px;
+      margin: 20px;
+      padding: 20px;
+      text-align: center;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .product h3 {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+    .product ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .product ul li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#products">Our Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="content" id="home">
+    <h1>Welcome to Koirala Gems</h1>
+    <p>At Koirala Gems, we offer a wide selection of high-quality gemstones that cater to your needs. Whether you're looking for healing stones or precious jewels, we've got it all!/p>
+  </div>
+
+  <div class="content" id="about">
+    <h2>About Us</h2>
+    <p>We are a gemstone business dedicated to providing our customers with the best gemstones for personal use, jewelry making, and more. With a strong reputation for quality, Koirala Gems is your trusted source for beautiful and authentic gemstones. This company has been  running in the supervisation of Ms.Bhanu Parsad Koirala and his wife Mrs.Nisha Devi Koirala. This company will help you pick the best for ou. Unlike many gemstone companies this company is userfriendly. This company curenly is serving fom nepal. If there is any international language barriar is there please contact us through email and if ther is no barrier then you may proceed and contact on our contact number. Shippings will be avilable to product purchuages above the price of 200 dollars.Hope that with the help of you all we wil be able to expand our company more.Thank you.
+  </div>
+
+  <div class="content" id="products">
+    <h2>Our Products</h2>
+    <div id="product-list"></div>
+  </div>
+
+  <div class="content" id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:deepdarshanko@gmal.com">deepdarshanko@gmal.com</a></p>
+    <p>Phone: <a href="tel:+9841667761">9841667761</a></p>
+  </div>
+
+  <script>
+    const products = [
+      {
+        name: "Topaz",
+        image: "http://gemstoneguru.com/wp-content/uploads/2012/04/Topaz.png", 
+        description: "A gem of strength, love, and abundance. Known for its healing properties and energy amplification.",
+        features: [
+          "Origin: Brazil, Sri Lanka, Pakistan",
+          "Chakra: Throat",
+          "Element: Fire",
+          "Associated with: Strength, love, abundance"
+        ]
+      },
+      {
+        name: "Ruby",
+        image: "https://purepng.com/public/uploads/large/purepng.com-ruby-stone-gemrubyblood-redgemstonemineral-corundumgemsapphires-1701528980001qe5gu.png", 
+        description: "A symbol of vitality and passion. Ruby is known for its fiery energy and stimulating properties.",
+        features: [
+          "Origin: Myanmar, Thailand, Sri Lanka",
+          "Chakra: Root",
+          "Element: Fire",
+          "Associated with: Passion, vitality, courage"
+        ]
+      },
+      {
+        name: "Emerald",
+        image: "https://www.purevedicgems.com/wp-content/uploads/2015/11/emerald-medium-b.jpg", 
+        description: "A symbol of rebirth and prosperity. Promotes harmony, love, and wisdom.",
+        features: [
+          "Origin: Colombia, Zambia, Brazil",
+          "Chakra: Heart",
+          "Element: Earth",
+          "Associated with: Love, wisdom, intuition"
+        ]
+      },
+      {
+        name: "Blue Sapphire",
+        image: "https://img.freepik.com/premium-photo/shiny-crystal-blue-sapphire-gem-isolated-black-background-natural-precious-mineral-stone-artistic_107173-26766.jpg?w=2000", 
+        description: "A gem of wisdom, truth, and mental clarity. Blue Sapphire is known for its ability to calm and focus the mind.",
+        features: [
+          "Origin: Sri Lanka, Myanmar, Madagascar",
+          "Chakra: Throat",
+          "Element: Air",
+          "Associated with: Wisdom, mental clarity, communication"
+        ]
+      },
+      {
+        name: "Perls",
+        image: "https://www.thepearlsource.com/blog/wp-content/uploads/2017/08/shutterstock_250050748.jpg", 
+        description: "Perls are cherished for their timeless elegance and natural beauty, symbolizing purity and emotional balance.",
+        features: [
+          "Origin: Australia, Tahiti, Japan",
+          "Chakra: Crown",
+          "Element: Water",
+          "Associated with: Purity, emotional balance, wisdom"
+        ]
+      }
+    ];
+
+    const productContainer = document.getElementById('product-list');
+    products.forEach(product => {
+      const div = document.createElement('div');
+      div.classList.add('product');
+      div.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <ul>
+          ${product.features.map(f => `<li>${f}</li>`).join('')}
+        </ul>
+      `;
+      productContainer.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>
